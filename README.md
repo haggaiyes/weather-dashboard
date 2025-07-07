@@ -23,17 +23,14 @@ cd weather-dashboard
 ```
 ### 2. Install backend dependencies
 ```bash
-Copy
-Edit
 npm install
 ```
 ### 3. Start the backend server
 ```bash
-Copy
-Edit
 node index.js
-Backend runs at: http://localhost:5000
 ```
+Backend runs at: http://localhost:5000
+
 ### 4. Open the frontend
 Simply open index.html in your browser.
 Make sure your browser allows CORS for local development or run with a local server like VSCode Live Server. 
