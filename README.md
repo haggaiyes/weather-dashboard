@@ -41,15 +41,9 @@ Sign up at WeatherAPI.com.
 Copy your API key.
 
 Replace the key in index.js:
-
-js
-Copy
-Edit
 const apiKey = 'YOUR_API_KEY_HERE';
 ## 📂 Project Structure
 ```bash
-Copy
-Edit
 .
 ├── index.html          # Frontend page
 ├── style.css           # Styling
