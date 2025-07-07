@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Distributed Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🌎 Distributed Weather Dashboard</h1>
+  <div id="weather" class="weather-grid"></div>
+
+  <script>
+    fetch('http://localhost:5000/api/weather')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('weather');
+        container.innerHTML = '';
+        data.forEach(entry => {
+          const card = document.createElement('div');
+          card.className = 'weather-card';
+          card.innerHTML = `
+            <img src="${entry.icon}" alt="${entry.description}" width="64" height="64" />
+            <h2>${entry.city}</h2>
+            <p>${entry.description}</p>
+            <p><strong>${entry.temp}°C</strong></p>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('Failed to fetch weather:', error);
+      });
+  </script>
+</body>
+</html>
